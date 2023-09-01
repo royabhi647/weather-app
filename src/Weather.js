@@ -80,7 +80,7 @@ function Weather() {
         </div>
         <div className="weather-info">
           <img src={data.image} alt="" className="icon" />
-          <h1>{data.celcius}°c</h1>
+          <h1>{Math.round(data.celcius)}°c</h1>
           <h2>{data.name}</h2>
           <div className="details">
             <div className="col">
@@ -93,7 +93,7 @@ function Weather() {
             <div className="col">
               <img src={wind} className="inner-icon" />
               <div className="wind">
-                <p>{data.speed} km/h</p>
+                <p>{Math.round(data.speed)} km/h</p>
                 <p style={{ fontFamily: "Poppins" }}>Wind</p>
               </div>
             </div>
