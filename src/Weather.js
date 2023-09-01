@@ -30,13 +30,13 @@ function Weather() {
         .then((res) => {
           console.log(res.data);
           let imagePath = "";
-          if (res.data.weather[0].main == "Clouds") {
+          if (res.data.weather[0].main === "Clouds") {
             imagePath = cloudy;
-          } else if (res.data.weather[0].main == "Rain") {
+          } else if (res.data.weather[0].main === "Rain") {
             imagePath = raining;
-          } else if (res.data.weather[0].main == "Mist") {
+          } else if (res.data.weather[0].main === "Mist") {
             imagePath = Mist;
-          } else if (res.data.weather[0].main == "Haze") {
+          } else if (res.data.weather[0].main === "Haze") {
             imagePath = Haze;
           } else {
             imagePath = sunny;
@@ -54,7 +54,7 @@ function Weather() {
         })
         .catch((err) => {
           console.log(err);
-          if (err.response.status == 404) {
+          if (err.response.status === 404) {
             setError("Invalid City Name");
           } else {
             setError("");
